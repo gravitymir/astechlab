@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASTechLab — Andrey Suhodeev</title>
+  <meta name="description" content="ASTechLab — IoT &amp; ICS division. Andrey Suhodeev, director. ESP32, Wi-Fi and Bluetooth solutions, automation and applied R&amp;D." />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="card__head">
+      <div class="logo">AS<span>·</span>TechLab</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="avatar" aria-hidden="true">AS</div>
+      <div class="hero__text">
+        <h1>Andrey Suhodeev</h1>
+        <p class="role">Director · ASTechLab — IoT &amp; ICS Division</p>
+        <p class="tagline">IoT &amp; industrial control systems · ESP32 · Wi-Fi · Bluetooth · automation and applied R&amp;D.</p>
+        <ul class="tags" aria-label="Specializations">
+          <li>IoT</li>
+          <li>ICS</li>
+          <li>ESP32</li>
+          <li>Wi-Fi</li>
+          <li>Bluetooth</li>
+          <li>Rust</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="block">
+      <h2>About</h2>
+      <p>
+        ASTechLab is a technology studio led by Andrey Suhodeev, with a dedicated
+        <strong>IoT &amp; ICS Division</strong> focused on connected devices and
+        industrial control systems. We design firmware and gateways on
+        <strong>ESP32</strong>, build <strong>Wi-Fi</strong> and
+        <strong>Bluetooth / BLE</strong> connectivity layers, and integrate them
+        with reliable backends, dashboards, and tooling — with a soft spot for Rust.
+      </p>
+    </section>
+
+    <section id="portfolio" class="block">
+      <h2>Portfolio</h2>
+      <ul class="projects">
+        <li>
+          <h3>Project Alpha</h3>
+          <p>Short description of what was built and which stack was used.</p>
+        </li>
+        <li>
+          <h3>Project Beta</h3>
+          <p>Short description of what was built and which stack was used.</p>
+        </li>
+        <li>
+          <h3>This site</h3>
+          <p>Static portfolio served by a tiny Axum (Rust) web server.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contacts" class="block">
+      <h2>Contacts</h2>
+      <ul class="contacts">
+        <li><span>Email</span><a href="mailto:gravitymir@gmail.com">gravitymir@gmail.com</a></li>
+        <li><span>GitHub</span><a href="#" rel="noopener">github.com/your-handle</a></li>
+        <li><span>Telegram</span><a href="#" rel="noopener">@your-handle</a></li>
+        <li><span>Location</span><span>Earth</span></li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <span>© <span id="year"></span> ASTechLab</span>
+      <span>Built with Rust · Axum</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
