@@ -1,88 +1,410 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASTechLab — Andrey Suhodeev</title>
-  <meta name="description" content="ASTechLab — IoT &amp; ICS division. Andrey Suhodeev, director. ESP32, Wi-Fi and Bluetooth solutions, automation and applied R&amp;D." />
-  <link rel="stylesheet" href="/style.css" />
-</head>
-<body>
-  <main class="card">
-    <header class="card__head">
-      <div class="logo">AS<span>·</span>TechLab</div>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contacts">Contacts</a>
-      </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ASTechLab — Andrei Suhodeev</title>
+        <meta
+            name="description"
+            content="ASTechLab — Connecting Physical Systems with Digital Solutions. Internet of Things, industrial control systems, ESP32 / STM32 firmware, Wi-Fi &amp; Bluetooth, and neural-network integration. Led by Andrei Suhodeev."
+        />
+        <style>
+            :root {
+                --bg: #0f1117;
+                --bg-card: #161a23;
+                --border: #232838;
+                --text: #e6e8ef;
+                --muted: #9ba3b4;
+                --accent: #7c9cff;
+                --accent-2: #5ef2c1;
+                --radius: 16px;
+                --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+                font-family:
+                    "Inter",
+                    "Segoe UI",
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+            }
 
-    <section class="hero">
-      <div class="avatar" aria-hidden="true">AS</div>
-      <div class="hero__text">
-        <h1>Andrey Suhodeev</h1>
-        <p class="role">Director · ASTechLab — IoT &amp; ICS Division</p>
-        <p class="tagline">IoT &amp; industrial control systems · ESP32 · Wi-Fi · Bluetooth · automation and applied R&amp;D.</p>
-        <ul class="tags" aria-label="Specializations">
-          <li>IoT</li>
-          <li>ICS</li>
-          <li>ESP32</li>
-          <li>Wi-Fi</li>
-          <li>Bluetooth</li>
-          <li>Rust</li>
-        </ul>
-      </div>
-    </section>
+            * {
+                box-sizing: border-box;
+            }
 
-    <section id="about" class="block">
-      <h2>About</h2>
-      <p>
-        ASTechLab is a technology studio led by Andrey Suhodeev, with a dedicated
-        <strong>IoT &amp; ICS Division</strong> focused on connected devices and
-        industrial control systems. We design firmware and gateways on
-        <strong>ESP32</strong>, build <strong>Wi-Fi</strong> and
-        <strong>Bluetooth / BLE</strong> connectivity layers, and integrate them
-        with reliable backends, dashboards, and tooling — with a soft spot for Rust.
-      </p>
-    </section>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background:
+                    radial-gradient(
+                        1200px 600px at 10% -10%,
+                        rgba(124, 156, 255, 0.15),
+                        transparent 60%
+                    ),
+                    radial-gradient(
+                        900px 500px at 110% 110%,
+                        rgba(94, 242, 193, 0.1),
+                        transparent 60%
+                    ),
+                    var(--bg);
+                color: var(--text);
+                min-height: 100vh;
+                -webkit-font-smoothing: antialiased;
+            }
 
-    <section id="portfolio" class="block">
-      <h2>Portfolio</h2>
-      <ul class="projects">
-        <li>
-          <h3>Project Alpha</h3>
-          <p>Short description of what was built and which stack was used.</p>
-        </li>
-        <li>
-          <h3>Project Beta</h3>
-          <p>Short description of what was built and which stack was used.</p>
-        </li>
-        <li>
-          <h3>This site</h3>
-          <p>Static portfolio served by a tiny Axum (Rust) web server.</p>
-        </li>
-      </ul>
-    </section>
+            body {
+                display: flex;
+                justify-content: center;
+                padding: 48px 20px;
+            }
 
-    <section id="contacts" class="block">
-      <h2>Contacts</h2>
-      <ul class="contacts">
-        <li><span>Email</span><a href="mailto:gravitymir@gmail.com">gravitymir@gmail.com</a></li>
-        <li><span>GitHub</span><a href="#" rel="noopener">github.com/your-handle</a></li>
-        <li><span>Telegram</span><a href="#" rel="noopener">@your-handle</a></li>
-        <li><span>Location</span><span>Earth</span></li>
-      </ul>
-    </section>
+            .card {
+                width: 100%;
+                max-width: 880px;
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 36px 40px;
+            }
 
-    <footer class="foot">
-      <span>© <span id="year"></span> ASTechLab</span>
-      <span>Built with Rust · Axum</span>
-    </footer>
-  </main>
+            .card__head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 28px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid var(--border);
+            }
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+            .logo {
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                font-size: 1.1rem;
+            }
+            .logo span {
+                color: var(--accent-2);
+                margin: 0 4px;
+            }
+
+            .nav {
+                display: flex;
+                gap: 22px;
+                flex-wrap: wrap;
+            }
+            .nav a {
+                color: var(--muted);
+                text-decoration: none;
+                font-size: 0.95rem;
+                transition: color 0.15s ease;
+            }
+            .nav a:hover {
+                color: var(--accent);
+            }
+
+            .hero {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                margin: 14px 0 36px;
+            }
+            .avatar {
+                width: 92px;
+                height: 92px;
+                border-radius: 50%;
+                background: linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--accent-2)
+                );
+                color: #0f1117;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 800;
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+                flex-shrink: 0;
+            }
+            .hero__text h1 {
+                margin: 0 0 6px;
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+            .role {
+                margin: 0 0 6px;
+                color: var(--accent);
+                font-weight: 600;
+            }
+            .headline {
+                margin: 6px 0 4px;
+                font-size: 1.15rem;
+                font-weight: 600;
+                color: var(--text);
+                line-height: 1.3;
+            }
+            .tagline {
+                margin: 0;
+                color: var(--muted);
+            }
+
+            .tags {
+                list-style: none;
+                padding: 0;
+                margin: 12px 0 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .tags li {
+                font-size: 0.78rem;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                color: var(--accent-2);
+                background: rgba(94, 242, 193, 0.08);
+                border: 1px solid rgba(94, 242, 193, 0.25);
+                padding: 4px 10px;
+                border-radius: 999px;
+            }
+
+            .block {
+                margin: 28px 0;
+            }
+            .block h2 {
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--muted);
+                margin: 0 0 14px;
+            }
+            .block p {
+                margin: 0;
+                line-height: 1.6;
+                color: #d3d7e3;
+            }
+            .block p + p {
+                margin-top: 10px;
+            }
+
+            .projects {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 14px;
+            }
+            .projects li {
+                background: #1b2030;
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 16px;
+                transition:
+                    transform 0.15s ease,
+                    border-color 0.15s ease;
+            }
+            .projects li:hover {
+                transform: translateY(-2px);
+                border-color: var(--accent);
+            }
+            .projects h3 {
+                margin: 0 0 6px;
+                font-size: 1.05rem;
+            }
+            .projects p {
+                font-size: 0.92rem;
+                color: var(--muted);
+            }
+
+            .contacts {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 10px 24px;
+            }
+            .contacts li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+                border-bottom: 1px dashed var(--border);
+            }
+            .contacts li > span:first-child {
+                color: var(--muted);
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            .contacts a {
+                color: var(--text);
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                transition:
+                    border-color 0.15s ease,
+                    color 0.15s ease;
+            }
+            .contacts a:hover {
+                color: var(--accent);
+                border-bottom-color: var(--accent);
+            }
+
+            .foot {
+                margin-top: 32px;
+                padding-top: 18px;
+                border-top: 1px solid var(--border);
+                display: flex;
+                justify-content: space-between;
+                color: var(--muted);
+                font-size: 0.85rem;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            @media (max-width: 560px) {
+                .card {
+                    padding: 24px 20px;
+                }
+                .hero {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .card__head {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="card">
+            <header class="card__head">
+                <div class="logo">AS<span>·</span>TechLab</div>
+                <nav class="nav">
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contacts">Contacts</a>
+                </nav>
+            </header>
+
+            <section class="hero">
+                <div class="avatar" aria-hidden="true">AS</div>
+                <div class="hero__text">
+                    <h1>Andrei Suhodeev</h1>
+                    <p class="role">Founder and Lead Engineer · ASTechLab</p>
+                    <p class="headline">
+                        Connecting Physical Systems with Digital Solutions
+                    </p>
+                    <p class="tagline">
+                        Internet of Things · industrial control systems ·
+                        ESP32 / STM32 firmware · Wi-Fi &amp; Bluetooth
+                        connectivity · integrating neural-network solutions ·
+                        applied R&amp;D.
+                    </p>
+                    <ul class="tags" aria-label="Specializations">
+                        <li>IoT</li>
+                        <li>ICS</li>
+                        <li>ESP32</li>
+                        <li>STM32</li>
+                        <li>Wi-Fi</li>
+                        <li>Bluetooth</li>
+                        <li>Neural Nets</li>
+                        <li>Rust</li>
+                        <li>M5Stack</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="about" class="block">
+                <h2>About</h2>
+                <p>
+                    ASTechLab is a technology studio led by Andrei Suhodeev,
+                    with a dedicated
+                    <strong>IoT &amp; ICS Division</strong> focused on
+                    connecting physical systems with digital solutions. We
+                    design firmware and gateways on <strong>ESP32</strong>
+                    and <strong>STM32</strong>, build <strong>Wi-Fi</strong>
+                    and <strong>Bluetooth / BLE</strong> connectivity layers,
+                    and tie sensors, actuators and machines into reliable
+                    backends and dashboards — with a soft spot for Rust.
+                </p>
+                <p>
+                    Where it adds real value, we
+                    <strong>integrate neural-network solutions</strong> at the
+                    edge and in the cloud — from on-device anomaly detection
+                    on microcontrollers to vision and signal models running
+                    alongside industrial control loops, turning raw
+                    <strong>Internet of Things</strong> data into actionable
+                    decisions.
+                </p>
+            </section>
+
+            <section id="portfolio" class="block">
+                <h2>Portfolio</h2>
+                <ul class="projects">
+                    <li>
+                        <h3>Project Alpha</h3>
+                        <p>
+                            Short description of what was built and which stack
+                            was used.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Project Beta</h3>
+                        <p>
+                            Short description of what was built and which stack
+                            was used.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>This site</h3>
+                        <p>
+                            Static portfolio served by a tiny Axum (Rust) web
+                            server.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contacts" class="block">
+                <h2>Contacts</h2>
+                <ul class="contacts">
+                    <li>
+                        <a href="mailto:gravitymir@gmail.com"
+                            >gravitymir@gmail.com</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://t.me/gravitymir"
+                            target="_self"
+                            rel="noopener"
+                            >@gravitymir</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://maps.google.com/maps?q=51.916879,-8.175346&ll=51.916879,-8.175346&z=10"
+                            target="_blank"
+                            rel="noopener"
+                            >Ireland, Cork, Midleton</a
+                        >
+                    </li>
+                </ul>
+            </section>
+
+            <footer class="foot">
+                <span>© <span id="year"></span> ASTechLab</span>
+                <span>Built with Rust · Axum</span>
+            </footer>
+        </main>
+
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+    </body>
 </html>
